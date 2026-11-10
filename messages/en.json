@@ -1,0 +1,701 @@
+{
+  "meta": {
+    "home": {
+      "title": "Aluminium Containers & Foil Made in UAE | Silverpot",
+      "description": "Aluminium food containers, platters and foil rolls pressed in Ajman since 1997. Factory-direct supply for restaurants, caterers and distributors."
+    },
+    "products": {
+      "title": "All Aluminium Containers, Platters & Foil | Silverpot",
+      "description": "Browse 26 aluminium packaging products by model code: containers with lids, catering platters and foil rolls. Made in Ajman, UAE. Get a quote."
+    },
+    "containers": {
+      "title": "Aluminium Containers with Lids – 13 Models | Silverpot",
+      "description": "Aluminium food containers with matching lids, including 2- and 3-compartment and broast models. Made in Ajman for UAE takeaway and catering."
+    },
+    "platters": {
+      "title": "Aluminium Platters for Catering | Silverpot UAE",
+      "description": "Aluminium platters for buffets, catering trays and family-style serving. Models 6550, 6586, 65180 and 65220, made in Ajman, UAE."
+    },
+    "foil": {
+      "title": "Aluminium Foil Rolls 30 cm & 45 cm | Silverpot UAE",
+      "description": "Household and catering aluminium foil rolls in 30 cm and 45 cm widths, from 13.5 sq ft to 300 m, plus promo packs. Made in Ajman, UAE."
+    },
+    "productTitle": "{name} | Silverpot",
+    "productSuffix": "Made in Ajman, UAE. Add it to your quote or ask on WhatsApp.",
+    "sizeFinder": {
+      "title": "Aluminium Container Size Finder | Silverpot",
+      "description": "Answer three questions about what you’re packing and for how many, and we’ll suggest the right Silverpot aluminium container or foil."
+    },
+    "wholesale": {
+      "title": "Wholesale Aluminium Containers & Foil in UAE | Silverpot",
+      "description": "Factory-direct bulk aluminium packaging for restaurants, cloud kitchens, caterers, hotels and distributors in the UAE. Send a quote request."
+    },
+    "about": {
+      "title": "About Silverpot – Aluminium Packaging, Ajman Since 1997",
+      "description": "Al Mohamadi Light Industries Co. LLC has made disposable packaging in Ajman since 1997. Meet Silverpot: aluminium containers, platters and foil."
+    },
+    "sustainability": {
+      "title": "Recycling Aluminium Containers & Foil | Silverpot",
+      "description": "Aluminium can be recycled again and again without losing quality. How to recycle Silverpot containers and foil properly, in four steps."
+    },
+    "faq": {
+      "title": "Aluminium Container & Foil FAQs | Silverpot",
+      "description": "Answers on using aluminium containers and foil, ordering in bulk, delivery and recycling, from the Silverpot team in Ajman, UAE."
+    },
+    "contact": {
+      "title": "Contact Silverpot – Ajman, UAE | Call, WhatsApp, Email",
+      "description": "Call +971 6 743 1314, WhatsApp +971 50 849 4521 or email info@silverpot.org. Silverpot aluminium packaging, Ajman, United Arab Emirates."
+    },
+    "quote": {
+      "title": "Your Quote | Silverpot",
+      "description": "Review the products on your quote list, set quantities and send it to Silverpot by form or WhatsApp."
+    },
+    "notFound": {
+      "title": "Page Not Found | Silverpot"
+    },
+    "privacy": {
+      "title": "Privacy Policy | Silverpot",
+      "description": "How Silverpot handles the details you send through our quote and contact forms."
+    },
+    "terms": {
+      "title": "Terms of Use | Silverpot",
+      "description": "The terms for using silverpot.org, product information and quotations from Silverpot, Ajman, UAE."
+    },
+    "keywords": "aluminium containers UAE, aluminium food containers with lid, aluminium foil container manufacturer UAE, aluminium containers Ajman, disposable aluminium containers Dubai, aluminium foil roll wholesale UAE, catering foil roll 45 cm, aluminium platter UAE, aluminum containers UAE, aluminum foil roll"
+  },
+  "common": {
+    "skip": "Skip to content",
+    "browseProducts": "Browse products",
+    "getBulkQuote": "Get a bulk quote",
+    "getQuote": "Get a quote",
+    "chatWhatsApp": "Chat on WhatsApp",
+    "askWhatsApp": "Ask on WhatsApp",
+    "call": "Call {phone}",
+    "callUs": "Call us",
+    "askUs": "Ask us",
+    "contactUs": "Contact us",
+    "addToQuote": "Add to quote",
+    "added": "Added",
+    "remove": "Remove",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "back": "Back",
+    "model": "Model",
+    "home": "Home",
+    "products": "Products",
+    "breadcrumb": "Breadcrumb",
+    "photoComingSoon": "Photo coming soon",
+    "unitCartons": "{count, plural, one {carton} other {cartons}}",
+    "unitPieces": "{count, plural, one {piece} other {pieces}}",
+    "cartons": "Cartons",
+    "pieces": "Pieces",
+    "productsCount": "{count, plural, one {# product} other {# products}}",
+    "modelsCount": "{count, plural, one {# model} other {# models}}",
+    "whatsapp": "WhatsApp",
+    "loading": "Loading",
+    "external": "(opens in a new tab)"
+  },
+  "review": {
+    "needs": "Needs client confirmation",
+    "arDraft": "AR draft",
+    "legalDraft": "Draft. Needs legal review before launch.",
+    "placeholder": "{label}: needs client confirmation",
+    "temp": "Placeholder: needs client answer"
+  },
+  "crinkle": {
+    "label": "Aloom, Silverpot’s unofficial head of quality control",
+    "lines": {
+      "1": "Head of QC. Unofficially.",
+      "2": "I’ve been in hotter places than this meeting.",
+      "3": "Not trash. Pre-recycled.",
+      "4": "Lids on. Drama off.",
+      "5": "Takes the heat. Doesn’t take it personally.",
+      "6": "Built to be used once. Made to be remembered."
+    }
+  },
+  "topbar": {
+    "left": "Factory-direct from Ajman since 1997",
+    "right": "Bulk quotes on WhatsApp"
+  },
+  "nav": {
+    "main": "Main",
+    "homeLabel": "Silverpot home",
+    "products": "Products",
+    "wholesale": "Wholesale",
+    "about": "About",
+    "sustainability": "Sustainability",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "search": "Search",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "quote": "Quote",
+    "quoteLabel": "Your quote, {count, plural, =0 {no items} one {# item} other {# items}}",
+    "language": "Language",
+    "switchTo": "عربي",
+    "switchToLabel": "اقرأ هذه الصفحة بالعربية",
+    "megaFinderTitle": "Not sure which size?",
+    "megaFinderBody": "Try the size finder.",
+    "megaFinderCta": "Open the size finder",
+    "megaAll": "All {name}",
+    "megaClose": "Close products menu",
+    "families": "Product families",
+    "allProducts": "All products"
+  },
+  "footer": {
+    "products": "Products",
+    "containers": "Containers",
+    "platters": "Platters",
+    "foil": "Foil",
+    "allProducts": "All products",
+    "sizeFinder": "Size finder",
+    "company": "Company",
+    "contact": "Contact",
+    "follow": "Follow",
+    "whatsappSuffix": "(WhatsApp)",
+    "location": "Ajman, United Arab Emirates",
+    "street": "Street address",
+    "hours": "Factory hours",
+    "copyright": "© {year} Al Mohamadi Light Industries Co. LLC.",
+    "tradingName": "<temp>Silverpot is a brand of Al Mohamadi Light Industries Co. LLC.</temp>",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "social": "{network} URL",
+    "hoursTemp": "<temp>Saturday to Thursday, 8:00 am to 6:00 pm. Friday closed.</temp>"
+  },
+  "home": {
+    "hero": {
+      "h1": "Aluminium containers and foil that take the <hot>heat</hot>.",
+      "sub": "Pressed in Ajman since 1997 for restaurants, caterers, cloud kitchens and every kitchen in between.",
+      "note": "meet Aloom. head of QC*",
+      "noteSmall": "*unofficially",
+      "stamp": "MADE IN AJMAN · SINCE 1997 ·"
+    },
+    "conveyor": {
+      "containers": "Aluminium containers",
+      "compartments": "Compartment containers",
+      "platters": "Aluminium platters",
+      "household": "Household foil rolls",
+      "catering": "Catering foil rolls",
+      "promo": "Foil promo packs"
+    },
+    "manifesto": {
+      "p1": "<b>Silverpot</b> has been pressing aluminium in Ajman since 1997. We make the containers, platters and foil that carry the UAE’s food from kitchen to table: the cafeteria on the corner, the cloud kitchen with 40 riders, the wedding buffet down the road.",
+      "p2": "Our products are made to be used once and recycled forever. Our standards are made to last a lot longer."
+    },
+    "bento": {
+      "h2": "Light metal. Heavy duty.",
+      "body": "<temp>Aluminium weighs next to nothing and does the heavy lifting: hot food, cold storage, a full delivery bag.</temp> We just make sure it’s done properly.",
+      "bodyNote": "Oven and freezer claims apply to the range",
+      "note": "wait… both?",
+      "whiteNote": "lifts more biryani than you’d think*",
+      "footnote": "*Not lab tested. Emotionally accurate.",
+      "yearLabel": "Pressing aluminium since",
+      "countLabel": "products across 3 families"
+    },
+    "families": {
+      "h2": "Pick your family.",
+      "containers": {
+        "title": "Containers with lids",
+        "line": "Lids on. Drama off."
+      },
+      "platters": {
+        "title": "Platters",
+        "line": "Made for sharing. Also for not sharing."
+      },
+      "foil": {
+        "title": "Foil rolls and packs",
+        "line": "30 cm or 45 cm. Choose your fighter."
+      }
+    },
+    "featured": {
+      "h2": "Start with these.",
+      "sub": "Eight of our most-ordered models.",
+      "subSafe": "<temp>A few good places to start.</temp>",
+      "subNote": "Replace with real bestsellers",
+      "seeAll": "See all {count} products",
+      "progress": "Rail position"
+    },
+    "finder": {
+      "h2": "Not sure which size?",
+      "body": "Tell us what you’re packing and for how many. We’ll point you to the right model, or to someone who knows.",
+      "chipsLabel": "What are you packing?"
+    },
+    "segments": {
+      "h2": "Who we pack for.",
+      "cta": "Bulk and wholesale orders",
+      "dragHint": "go on, rearrange us"
+    },
+    "recycle": {
+      "h2": "Use once. Recycle forever.",
+      "body": "Aluminium can be recycled again and again without losing its quality. So “disposable” really just means “between jobs”.",
+      "cta": "How to recycle us",
+      "bubble": "Not trash. Pre-recycled."
+    },
+    "why": {
+      "h2": "Why order from the factory?",
+      "factory": {
+        "title": "Factory-direct",
+        "body": "Straight from our Ajman production floor to your store room."
+      },
+      "delivered": {
+        "title": "Delivered with care",
+        "body": "Packed to arrive the way it left. <temp>Delivery across the UAE.</temp>",
+        "note": "Delivery coverage"
+      },
+      "bulk": {
+        "title": "Ready for bulk",
+        "body": "Order by the carton or by the pallet. <temp>Small and bulk orders welcome. Your quote confirms the details.</temp>",
+        "note": "Minimum order (MOQ)"
+      },
+      "people": {
+        "title": "Real people",
+        "body": "Call, email or WhatsApp. Someone who knows the product will answer."
+      }
+    },
+    "wild": {
+      "h2": "Seen in the wild.",
+      "captions": {
+        "1": "Kunafa, delivered warm.",
+        "2": "Shawarma’s best friend.",
+        "3": "Leftovers, but organised.",
+        "4": "Biryani for forty.",
+        "5": "Grill night, sorted."
+      },
+      "instagram": "Follow us on Instagram"
+    },
+    "faq": {
+      "h2": "Quick answers.",
+      "all": "All questions"
+    },
+    "bulk": {
+      "h2": "Need 10,000 by Thursday?",
+      "body": "Tell us what you need and where it’s going. We’ll come back with price, stock and timing."
+    }
+  },
+  "catalogue": {
+    "h1": "All products.",
+    "sub": "26 products in 3 families. Search by model code if you know it.",
+    "searchLabel": "Search products",
+    "searchPlaceholder": "Search a model code or product, for example 8325",
+    "clearSearch": "Clear search",
+    "family": "Family",
+    "all": "All",
+    "compartments": "Compartments",
+    "width": "Width",
+    "type": "Type",
+    "household": "Household roll",
+    "catering": "Catering roll",
+    "promo": "Promo pack",
+    "sort": "Sort",
+    "sortCodeAsc": "Model code (low to high)",
+    "sortCodeDesc": "Model code (high to low)",
+    "sortName": "Name A–Z",
+    "clear": "Clear filters",
+    "filters": "Filters",
+    "filtersActive": "Filters ({count})",
+    "showResults": "Show {count, plural, one {# product} other {# products}}",
+    "live": "Showing {count, plural, one {# {family, select, containers {container} platters {platter} foil {foil product} other {product}}} other {# {family, select, containers {containers} platters {platters} foil {foil products} other {products}}}}",
+    "empty": "Nothing matches that. Try a different model code or clear the filters.",
+    "footerBand": "Can’t find your size? Tell us what you need.",
+    "finderLink": "Try the size finder",
+    "wholesaleLink": "Wholesale and bulk orders",
+    "familyFaq": "Quick answers.",
+    "containers": {
+      "h1": "Aluminium containers with lids",
+      "intro": "Thirteen models, one job: get food from your kitchen to someone’s table looking like it never left. Every Silverpot container is pressed from aluminium in our Ajman facility and comes with a matching lid. Pick a single-compartment model for everyday takeaway, split a meal with the 2- or 3-compartment 8576, or go straight to the 83166, shaped for broast. Not sure which size fits your portions? Use the size finder or send us your menu on WhatsApp. We’ll match it to a model code.",
+      "note": "lids on. drama off."
+    },
+    "platters": {
+      "h1": "Aluminium platters",
+      "intro": "Four platters for food that’s meant to be shared: catering trays, buffet lines, majlis spreads and big family orders. Models 6550, 6586, 65180 and 65220 are pressed from aluminium in Ajman for kitchens that serve the whole room at once. Need a lid, a specific size or a mixed carton? Add the models to your quote and tell us.",
+      "introNote": "Platter shapes, sizes and lid options",
+      "note": "for the main event.",
+      "lidsTemp": "<temp>Ask us about matching lids.</temp>"
+    },
+    "foil": {
+      "h1": "Aluminium foil rolls and packs",
+      "intro": "Aluminium foil in two widths: 30 cm for everyday kitchens, and 45 cm for wide trays and professional prep. Choose household rolls from 13.5 to 200 sq ft, catering rolls in 150 m and 300 m lengths for busy kitchens, or promo packs built for retail shelves. Wrap shawarma, line trays, cover a biryani and keep the heat where it belongs.",
+      "note": "choose your fighter: 30 or 45."
+    }
+  },
+  "product": {
+    "model": "Model",
+    "goodFor": "Good for",
+    "specs": "Specifications",
+    "modelCode": "Model code",
+    "family": "Family",
+    "compartments": "Compartments",
+    "lid": "Lid",
+    "lidIncluded": "Included",
+    "capacity": "Capacity",
+    "topDims": "Top dimensions",
+    "depth": "Depth",
+    "rollWidth": "Roll width",
+    "rollLength": "Roll length",
+    "piecesPerPack": "Pieces per pack",
+    "packsPerCarton": "Packs per carton",
+    "piecesPerCarton": "Pieces per carton",
+    "ovenSafe": "Oven-safe",
+    "freezerSafe": "Freezer-safe",
+    "material": "Material",
+    "aluminium": "Aluminium",
+    "yes": "Yes",
+    "no": "No",
+    "moreSpecs": "More specs on request",
+    "askAbout": "Ask about {code}",
+    "askSpecsMsg": "Hi Silverpot, can you share the full specs for model {code}?",
+    "askMsg": "Hi Silverpot, I’m interested in model {code} – {name}. Quantity: {qty} {unit}.",
+    "askMsgNoCode": "Hi Silverpot, I’m interested in {name}. Quantity: {qty} {unit}.",
+    "quantity": "Quantity",
+    "unit": "Order in",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "length": "Length",
+    "lengthNote": "Length: {length}",
+    "variants": "Variants",
+    "specSheet": "Download spec sheet (PDF)",
+    "pairs": "Pairs well with",
+    "bulkBand": "Ordering in bulk? Send the whole list at once.",
+    "viewQuote": "View your quote ({count})",
+    "showDimensions": "Show dimensions",
+    "zoom": "Zoom into photo",
+    "zoomTitle": "{name}, enlarged photo",
+    "photoOf": "Photo {n} of {total}",
+    "familySticker": "Family: {family}",
+    "compartmentSticker": "{count} compartments",
+    "broast": "Broast",
+    "sqft": "{n} sq ft",
+    "m": "{n} m",
+    "cm": "{n} cm",
+    "ml": "{n} ml",
+    "mm": "{n} mm",
+    "microwave": "Microwave",
+    "notRecommended": "Not recommended"
+  },
+  "quote": {
+    "title": "Your quote.",
+    "drawerTitle": "Your quote",
+    "empty": "Your quote list is empty.",
+    "emptySub": "Add products from the catalogue, then send the whole list in one go.",
+    "emptyCrinkle": "Your quote list is empty. I’m not judging. (I am.)",
+    "items": "{count, plural, one {# item} other {# items}}",
+    "note": "Note for this product",
+    "notePlaceholder": "Anything specific? Printing, mixed cartons…",
+    "review": "Review and send",
+    "send": "Send quote request",
+    "sendWhatsApp": "Send on WhatsApp instead",
+    "clear": "Clear list",
+    "startNew": "Start a new list",
+    "success": "Quote request sent.",
+    "successSub": "Your quote is in the oven.",
+    "responseTime": "We’ll reply within {hours} working hours.",
+    "responseTimeLabel": "Reply time in working hours",
+    "toastAdded": "Added to your quote",
+    "toastRemoved": "Removed from your quote",
+    "announceAdded": "Added {code} to your quote",
+    "removeItem": "Remove {name} from your quote",
+    "listHeading": "Products in your quote",
+    "detailsHeading": "Your details",
+    "inlineHeading": "Your quote list",
+    "replyTimeTemp": "<temp>We usually reply within one working day.</temp>"
+  },
+  "forms": {
+    "company": "Company name",
+    "companyOptional": "Company",
+    "contactName": "Contact name",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone (with country code)",
+    "phoneOptional": "Phone",
+    "businessType": "Business type",
+    "emirate": "Emirate or country",
+    "deliveryEmirate": "Delivery emirate",
+    "neededBy": "Needed by",
+    "volume": "Estimated monthly volume",
+    "interests": "Products of interest",
+    "message": "Message",
+    "topic": "Topic",
+    "consent": "I agree to Silverpot contacting me about this request.",
+    "privacyLink": "Privacy policy",
+    "optional": "optional",
+    "choose": "Choose one",
+    "phoneHelp": "For example +971 50 123 4567",
+    "honeypot": "Leave this field empty",
+    "sending": "Sending…",
+    "sendMessage": "Send message",
+    "messageSent": "Message sent.",
+    "summary": "Check {count, plural, one {# field} other {# fields}} below:",
+    "options": {
+      "business": {
+        "restaurant": "Restaurant/cafeteria",
+        "cloud-kitchen": "Cloud kitchen",
+        "caterer": "Caterer/events",
+        "hotel": "Hotel/banquet",
+        "bakery": "Bakery/sweets",
+        "distributor": "Distributor/wholesaler",
+        "retail": "Supermarket/retail",
+        "other": "Other"
+      },
+      "emirate": {
+        "abu-dhabi": "Abu Dhabi",
+        "dubai": "Dubai",
+        "sharjah": "Sharjah",
+        "ajman": "Ajman",
+        "umm-al-quwain": "Umm Al Quwain",
+        "ras-al-khaimah": "Ras Al Khaimah",
+        "fujairah": "Fujairah",
+        "outside": "Outside the UAE"
+      },
+      "volume": {
+        "under-50": "Under 50 cartons",
+        "50-200": "50–200",
+        "200-1000": "200–1,000",
+        "1000-plus": "1,000+"
+      },
+      "topic": {
+        "quote": "Quote or bulk order",
+        "product": "Product question",
+        "distributor": "Become a distributor",
+        "other": "Something else"
+      },
+      "interests": {
+        "containers": "Containers",
+        "platters": "Platters",
+        "foil": "Foil"
+      }
+    },
+    "errors": {
+      "company": "Enter your company name.",
+      "name": "Enter your name.",
+      "email": "Enter an email address like name@company.com.",
+      "phone": "Enter a phone number with country code, for example +971 50 123 4567.",
+      "businessType": "Choose your business type.",
+      "emirate": "Choose an emirate or country.",
+      "deliveryEmirate": "Choose the emirate we’re delivering to.",
+      "topic": "Choose a topic.",
+      "message": "Write a short message so we know how to help.",
+      "consent": "Tick the box so we can contact you about this request.",
+      "items": "Add at least one product to your quote.",
+      "tooLong": "Keep this under {max} characters.",
+      "date": "Pick a date from today onwards.",
+      "rateLimited": "That’s a lot of requests in a short time. Try again in a few minutes, or message us on WhatsApp.",
+      "spam": "We couldn’t verify this request. Reload the page and try again.",
+      "sendFailed": "We couldn’t send your request just now. Try again, or send it to us on WhatsApp."
+    }
+  },
+  "finder": {
+    "h1": "Not sure which size?",
+    "sub": "Tell us what you’re packing and for how many. We’ll point you to the right model, or to someone who knows.",
+    "stations": {
+      "food": "Food",
+      "servings": "Servings",
+      "comp": "Compartments"
+    },
+    "progressLabel": "Size finder progress",
+    "stepOf": "Step {n} of {total}",
+    "step1": "What are you packing?",
+    "step2": "For how many people?",
+    "step3": "Need compartments?",
+    "result": "Here’s where we’d start.",
+    "confirmLine": "We’ll confirm the exact model on WhatsApp.",
+    "sendAnswers": "Send my answers on WhatsApp",
+    "startAgain": "Start again",
+    "answersMsg": "Hi Silverpot! I used the size finder on silverpot.org.\nFood: {food}\nServings: {servings}\nCompartments: {comp}\nWhich model would you recommend?",
+    "people": "{label} people",
+    "yourAnswers": "Your answers",
+    "change": "Change"
+  },
+  "wholesale": {
+    "h1": "By the carton. By the pallet. By Thursday?",
+    "heroDay": "THU",
+    "sub": "Factory-direct aluminium packaging for restaurants, cloud kitchens, caterers, hotels, bakeries and distributors <temp>across the UAE</temp>.",
+    "subNote": "GCC supply",
+    "send": "Send a quote request",
+    "howH2": "How ordering works.",
+    "steps": {
+      "1": {
+        "title": "Build your list",
+        "body": "Add models to your quote and set quantities in cartons."
+      },
+      "2": {
+        "title": "Send it",
+        "body": "Submit the form, or send the list to us on WhatsApp in one tap."
+      },
+      "3": {
+        "title": "Get your quote",
+        "body": "We confirm price, stock and lead time. <temp>We usually reply within one working day. Payment terms are confirmed with your quote.</temp>",
+        "note": "Reply time (within X working hours)"
+      },
+      "4": {
+        "title": "Delivered",
+        "body": "Straight from Ajman to your door. <temp>We deliver across the UAE. Lead times are confirmed with your quote.</temp>",
+        "note": "Delivery areas and lead times"
+      }
+    },
+    "whoH2": "Who we supply.",
+    "termsH2": "Terms at a glance.",
+    "terms": {
+      "moq": "Minimum order",
+      "lead": "Lead time",
+      "areas": "Delivery areas",
+      "payment": "Payment terms",
+      "samples": "Samples"
+    },
+    "privateH2": "Your brand on our lids.",
+    "formH2": "Tell us what you need."
+  },
+  "about": {
+    "h1": "Pressing aluminium in Ajman.",
+    "heroSpeech": "That’s our press line. Coil goes in, a container comes out. One stroke each, all day.",
+    "founded": "Founded",
+    "storyH2": "Our story.",
+    "story1": "Al Mohamadi Light Industries Co. LLC started in 1997 in the Emirate of Ajman, making and distributing disposable packaging for the food business. Nearly three decades later, the name on the carton is Silverpot, and the job hasn’t changed: make aluminium containers, platters and foil that kitchens can trust on their busiest day.",
+    "story2": "We’ve invested in modern machinery and in a team that knows the difference between “almost right” and right. We aim for products that are high quality, easy to use and responsible by design, because packaging that’s used once still has to work perfectly.",
+    "photoNeeded": "Factory photo needed",
+    "processH2": "From coil to container.",
+    "processNote": "Process wording to be checked with the factory",
+    "steps": {
+      "1": {
+        "title": "Coil",
+        "line": "It starts as a coil of aluminium foil stock.",
+        "note": "heavy. very heavy."
+      },
+      "2": {
+        "title": "Feed",
+        "line": "The coil unrolls into the press line, flat and fast.",
+        "note": ""
+      },
+      "3": {
+        "title": "Press",
+        "line": "A die presses each sheet into shape in a single stroke.",
+        "note": "loud. very loud."
+      },
+      "4": {
+        "title": "Trim and rim",
+        "line": "Edges are trimmed and the rim is rolled so lids sit tight.",
+        "note": ""
+      },
+      "5": {
+        "title": "Check and count",
+        "line": "Containers are checked, counted and stacked.",
+        "note": "Aloom supervises. allegedly."
+      },
+      "6": {
+        "title": "Pack and ship",
+        "line": "Cartons are packed, labelled and sent out across the UAE.",
+        "note": ""
+      }
+    },
+    "standH2": "What we stand for.",
+    "stand": {
+      "heat": {
+        "title": "Takes the heat",
+        "body": "Made for <temp>ovens, </temp>delivery bags and the lunch rush.",
+        "note": "Oven claim"
+      },
+      "stacks": {
+        "title": "Stacks up",
+        "body": "The same standard in the last carton as in the first."
+      },
+      "planet": {
+        "title": "Light on the planet",
+        "body": "Aluminium can be recycled again and again."
+      },
+      "phone": {
+        "title": "Picks up the phone",
+        "body": "Real people, quick answers, no runaround."
+      }
+    },
+    "numbers": {
+      "founded": "Founded",
+      "products": "Products online",
+      "families": "Product families",
+      "capacity": "Production capacity",
+      "team": "Team size",
+      "countries": "Countries served",
+      "customers": "Customers"
+    },
+    "certsH2": "Quality and certifications.",
+    "galleryH2": "On the factory floor.",
+    "detailsH2": "Company details.",
+    "details": {
+      "legal": "Legal name",
+      "brand": "Brand",
+      "founded": "Founded",
+      "location": "Location",
+      "licence": "Trade licence number"
+    },
+    "ctaH2": "Want to see the range?"
+  },
+  "sustainability": {
+    "h1": "Use once. Recycle <hl>forever</hl>.",
+    "sub": "Aluminium is one of the few packaging materials that can be recycled again and again without losing its quality. That makes “disposable” a bit of a misnomer.",
+    "bubble": "Not trash. Pre-recycled.",
+    "afterlifeH2": "The afterlife of a container.",
+    "afterlife": {
+      "1": "Feed someone.",
+      "2": "Scrape and rinse.",
+      "3": "Into the recycling bin.",
+      "4": "Melted down.",
+      "5": "Made into new aluminium."
+    },
+    "loopNote": "and round again",
+    "howH2": "How to recycle us properly.",
+    "how": {
+      "1": "Scrape off leftover food. A quick rinse is enough; it doesn’t need to sparkle.",
+      "2": "Take off paper or board lids and recycle them with paper.",
+      "3": "Scrunch used foil into a ball about the size of your fist. Small scraps are easier to sort that way.",
+      "4": "Use the recycling bins provided by your emirate’s municipality or your building.",
+      "2note": "Lid material"
+    },
+    "doingH2": "What we’re doing.",
+    "ctaH2": "Questions about our materials?"
+  },
+  "faqPage": {
+    "h1": "Questions, answered.",
+    "searchLabel": "Search questions",
+    "searchPlaceholder": "Search questions, for example oven",
+    "noResults": "No questions match “{q}”. Try another word, or ask a human below.",
+    "stuckH2": "Still stuck? Ask a human."
+  },
+  "contact": {
+    "h1": "Talk to the factory.",
+    "sub": "Quotes, questions, or “can you do 5,000 by tomorrow?”. Pick whichever channel suits you.",
+    "call": "Call",
+    "mobile": "Mobile: {phone}",
+    "whatsapp": "WhatsApp",
+    "whatsappLine": "Usually the fastest way to reach us.",
+    "whatsappNote": "WhatsApp number and response speed",
+    "email": "Email",
+    "visit": "Visit",
+    "location": "Ajman, United Arab Emirates",
+    "directions": "Get directions",
+    "formH2": "Drop us a line (or two).",
+    "mapH2": "Find the factory.",
+    "loadMap": "Load Google Map",
+    "mapNote": "The map loads from Google only when you ask for it.",
+    "mapTitle": "Map showing Al Mohamadi Light Industries Co LLC in Ajman"
+  },
+  "search": {
+    "label": "Search products",
+    "placeholder": "Search a model code or product",
+    "empty": "No match for “{q}”. Try a model code like 8325, or ask us on WhatsApp.",
+    "hint": "Enter to open · Shift+Enter to add to quote",
+    "suggested": "Start with these",
+    "results": "Results",
+    "open": "Open search"
+  },
+  "notFound": {
+    "h1": "This page got thrown out.",
+    "body": "It’s probably being <mark>recycled</mark> into something useful. Meanwhile, try one of these:",
+    "home": "Go to homepage",
+    "search": "Search"
+  },
+  "error": {
+    "h1": "Something stopped working on our side.",
+    "body": "Try again in a minute. If it keeps happening, message us on WhatsApp and we’ll sort it out.",
+    "retry": "Try again"
+  }
+}

@@ -1,0 +1,1916 @@
+@import 'tailwindcss';
+
+/* ───────────────────────────────────────────────────────────────
+   SILVERPOT DESIGN TOKENS (§3.13)
+   The default Tailwind palette, fonts, shadows and breakpoints are
+   reset so only brand values can be used.
+   ─────────────────────────────────────────────────────────────── */
+@theme {
+  --color-*: initial;
+  --color-yellow: #ffd21f;
+  --color-blue: #0e2a8c;
+  --color-red: #b8322a;
+  --color-white: #ffffff;
+  --color-foil: #e9ecf1;
+  --color-black: #000000;
+  --color-blue-12: rgb(14 42 140 / 0.12);
+
+  --font-*: initial;
+  --font-display: var(--font-big-shoulders), 'Arial Narrow', sans-serif;
+  --font-stencil: var(--font-big-shoulders-stencil), var(--font-big-shoulders), 'Arial Narrow', sans-serif;
+  --font-sans: var(--font-bricolage), system-ui, sans-serif;
+  --font-hand: var(--font-gochi), cursive;
+  --font-ar-display: var(--font-lalezar), var(--font-plex-ar), sans-serif;
+  /* Plex Arabic is subset to the Arabic block; Latin runs use Bricolage */
+  --font-ar: var(--font-plex-ar), var(--font-bricolage), system-ui, sans-serif;
+
+  --radius-btn: 10px;
+  --radius-rim: 14px;
+  --radius-tile: 24px;
+  --radius-plate: 4px;
+
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+
+  --ease-press: cubic-bezier(0.2, 0.9, 0.1, 1);
+  --ease-stamp: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --breakpoint-*: initial;
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+:root {
+  --shadow-color: var(--color-blue);
+  --shadow-sm: 3px 3px 0 0 var(--shadow-color);
+  --shadow-md: 5px 5px 0 0 var(--shadow-color);
+  --shadow-lg: 8px 8px 0 0 var(--shadow-color);
+
+  /* illustration ink + offset fills (§3.8) */
+  --ink: var(--color-blue);
+  --fill-1: var(--color-yellow);
+  --fill-2: var(--color-red);
+  --fill-3: var(--color-white);
+  --fill-foil: var(--color-foil);
+
+  /* focus ring (§3.11) */
+  --focus-outline: var(--color-yellow);
+  --focus-ring: var(--color-blue);
+
+  /* heading face swaps per locale */
+  --font-heading: var(--font-sans);
+  --font-body: var(--font-sans);
+  --font-note: var(--font-hand);
+
+  --header-h: 60px;
+  --dur-press: 120ms;
+  --dur-ui: 220ms;
+  --dur-move: 380ms;
+}
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 72px;
+  }
+}
+
+[dir='rtl'] {
+  --dirx: -1;
+  --shadow-sm: -3px 3px 0 0 var(--shadow-color);
+  --shadow-md: -5px 5px 0 0 var(--shadow-color);
+  --shadow-lg: -8px 8px 0 0 var(--shadow-color);
+}
+
+[lang='ar'] {
+  --font-heading: var(--font-ar-display);
+  --font-body: var(--font-ar);
+  --font-note: var(--font-ar);
+}
+
+/* Surface contexts: shadow, ink and focus colours flip by background (§3.3) */
+.on-blue {
+  --shadow-color: var(--color-yellow);
+  --ink: var(--color-white);
+  --fill-1: var(--color-yellow);
+  --fill-2: var(--color-yellow);
+  --fill-3: var(--color-blue);
+}
+.on-red {
+  --shadow-color: var(--color-blue);
+  --ink: var(--color-white);
+  --fill-1: var(--color-yellow);
+  --fill-2: var(--color-yellow);
+  --fill-3: var(--color-red);
+}
+.on-yellow {
+  --shadow-color: var(--color-blue);
+  --focus-outline: var(--color-blue);
+  --focus-ring: var(--color-white);
+  --fill-1: var(--color-white);
+  --fill-3: var(--color-white);
+}
+.on-light {
+  --shadow-color: var(--color-blue);
+  --ink: var(--color-blue);
+  --fill-1: var(--color-yellow);
+  --fill-2: var(--color-red);
+  --fill-3: var(--color-white);
+  --focus-outline: var(--color-yellow);
+  --focus-ring: var(--color-blue);
+}
+
+/* ───────────────────────────────────────────────────────────────
+   BASE
+   ─────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    color: var(--color-blue);
+    background: var(--color-white);
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header-h) + 24px);
+  }
+  body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--color-yellow);
+    color: var(--color-blue);
+  }
+  :where(h1, h2, h3, h4) {
+    font-family: var(--font-heading);
+    text-wrap: balance;
+  }
+  :where(p) {
+    text-wrap: pretty;
+  }
+  :where(a) {
+    text-underline-offset: 0.18em;
+    text-decoration-thickness: 2px;
+  }
+  bdi {
+    unicode-bidi: isolate;
+  }
+
+  /* Focus: 3px outline + 2px offset ring, visible on every surface (§3.11) */
+  :focus-visible {
+    outline: 3px solid var(--focus-outline);
+    outline-offset: 2px;
+  }
+  :where(:focus-visible) {
+    box-shadow: 0 0 0 2px var(--focus-ring);
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+  [hidden] {
+    display: none !important;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+   TYPE SCALE (§3.4)
+   ─────────────────────────────────────────────────────────────── */
+@utility type-mega {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+@utility type-code-xl {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(4.5rem, 12vw, 10rem);
+  line-height: 0.85;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+@utility type-display {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 7vw, 6.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+@utility type-h2 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 4.6vw, 4.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+@utility type-h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.375rem, 2.2vw, 2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+@utility type-h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+@utility type-body-l {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1.0625rem, 1.3vw, 1.25rem);
+  line-height: 1.5;
+}
+@utility type-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+@utility type-small {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+@utility type-code-s {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
+}
+@utility type-hand {
+  font-family: var(--font-note);
+  font-weight: 400;
+  font-size: clamp(1.125rem, 1.6vw, 1.5rem);
+  line-height: 1.2;
+}
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Arabic: Lalezar has one weight, and tracking breaks cursive joins. */
+[lang='ar'] :is(.type-display, .type-h2, .type-h3, .type-h4) {
+  letter-spacing: 0;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.2;
+}
+[lang='ar'] .type-h4 {
+  font-family: var(--font-ar);
+  font-weight: 700;
+}
+[lang='ar'] .type-hand {
+  font-weight: 500;
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  line-height: 1.45;
+}
+[lang='ar'] :is(.type-body, .type-body-l, .type-small) {
+  line-height: 1.75;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   HARD SHADOWS + PRESS INTERACTION (§3.6)
+   Shadows mean "you can press this". Static content never gets one.
+   ─────────────────────────────────────────────────────────────── */
+@utility shadow-hard-sm {
+  --elev: var(--shadow-sm);
+  box-shadow: var(--ring, 0 0 #0000), var(--elev);
+}
+@utility shadow-hard-md {
+  --elev: var(--shadow-md);
+  box-shadow: var(--ring, 0 0 #0000), var(--elev);
+}
+@utility shadow-hard-lg {
+  --elev: var(--shadow-lg);
+  box-shadow: var(--ring, 0 0 #0000), var(--elev);
+}
+@utility shadow-hard-none {
+  --elev: 0 0 0 0 transparent;
+  box-shadow: var(--ring, 0 0 #0000), var(--elev);
+}
+
+/* press: base sm → hover md → active 0 */
+@utility press {
+  --elev: var(--press-base, var(--shadow-sm));
+  box-shadow: var(--ring, 0 0 #0000), var(--elev);
+  transition:
+    transform var(--dur-press) var(--ease-press),
+    box-shadow var(--dur-press) var(--ease-press),
+    background-color var(--dur-press) var(--ease-press);
+  @media (hover: hover) {
+    &:hover:not(:disabled, [aria-disabled='true']) {
+      transform: translate(-2px, -2px);
+      --elev: var(--press-hover, var(--shadow-md));
+    }
+  }
+  &:active:not(:disabled, [aria-disabled='true']) {
+    transform: translate(3px, 3px);
+    --elev: 0 0 0 0 transparent;
+  }
+  [dir='rtl'] & {
+    @media (hover: hover) {
+      &:hover:not(:disabled, [aria-disabled='true']) {
+        transform: translate(2px, -2px);
+      }
+    }
+    &:active:not(:disabled, [aria-disabled='true']) {
+      transform: translate(-3px, 3px);
+    }
+  }
+}
+/* press-md: base md → hover lg */
+@utility press-md {
+  --press-base: var(--shadow-md);
+  --press-hover: var(--shadow-lg);
+}
+/* press-flat: pressable with shadow only after hover (used on selected chips) */
+@utility pressed-in {
+  transform: translate(3px, 3px) !important;
+  --elev: 0 0 0 0 transparent !important;
+}
+.press:focus-visible,
+.shadow-hard-sm:focus-visible,
+.shadow-hard-md:focus-visible,
+.shadow-hard-lg:focus-visible {
+  --ring: 0 0 0 2px var(--focus-ring);
+}
+
+/* ───────────────────────────────────────────────────────────────
+   INDUSTRIAL MOTIFS (§3.7) + TEXTURES (§3.11)
+   ─────────────────────────────────────────────────────────────── */
+@utility bg-blueprint {
+  background-image:
+    linear-gradient(var(--color-blue-12) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-blue-12) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+}
+@utility bg-blueprint-fine {
+  background-image:
+    linear-gradient(var(--color-blue-12) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-blue-12) 1px, transparent 1px);
+  background-size: 12px 12px;
+  background-position: -1px -1px;
+}
+/* Transparent product cutouts sit ON the blueprint grid, with a soft contact shadow. */
+@utility product-cutout {
+  filter: drop-shadow(0 6px 6px rgb(16 42 140 / 0.16));
+}
+@utility hazard {
+  height: 20px;
+  background: repeating-linear-gradient(-45deg, var(--color-yellow) 0 14px, var(--color-black) 14px 28px);
+}
+
+/* Grain: one fixed overlay per coloured section (3–4%) */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    /* Black noise at low alpha: same result as multiply, without a blend layer to raster. */
+    opacity: 0.045;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* RimFrame: outer 2px + inner 1px rim line inset 5px at 35% blue (§3.6) */
+@utility rim {
+  position: relative;
+  border: 2px solid var(--color-blue);
+  border-radius: var(--radius-rim);
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgb(14 42 140 / 0.35);
+    border-radius: calc(var(--radius-rim) - 7px);
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+/* Foil shimmer skeleton (§3.11) */
+@utility shimmer {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-foil);
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, #ffffff80, transparent);
+    animation: sp-shimmer 1.2s var(--ease-press) infinite;
+  }
+}
+
+@utility cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility shell {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  @media (min-width: 768px) {
+    padding-inline: 24px;
+  }
+  @media (min-width: 1024px) {
+    padding-inline: 32px;
+  }
+}
+@utility section-pad {
+  padding-block: 64px;
+  @media (min-width: 1024px) {
+    padding-block: 128px;
+  }
+}
+
+/* Review mode highlighter (§0.1.2) */
+.review-mark {
+  background: linear-gradient(transparent 8%, rgb(255 210 31 / 0.9) 8% 92%, transparent 92%);
+  outline: 2px dashed var(--color-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  color: var(--color-blue);
+}
+.on-yellow .review-mark {
+  background: linear-gradient(transparent 8%, rgb(255 255 255 / 0.9) 8% 92%, transparent 92%);
+}
+.review-label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: var(--color-blue);
+  color: var(--color-yellow);
+  white-space: nowrap;
+  vertical-align: middle;
+  text-transform: none;
+}
+
+/* Wobbly hand-drawn ink for illustrations (applies a shared SVG filter) */
+.ink-wobble {
+  filter: url(#sp-wobble);
+}
+
+/* ───────────────────────────────────────────────────────────────
+   MOTION (§4)
+   ─────────────────────────────────────────────────────────────── */
+@keyframes sp-shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes sp-stamp-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-28px) scale(1.12) rotate(var(--r, 0deg));
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sp-settle {
+  from {
+    transform: translateY(12px);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes sp-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-56px) scaleY(1);
+  }
+  45% {
+    opacity: 1;
+    transform: translateY(0) scaleY(0.82);
+  }
+  72% {
+    transform: translateY(0) scaleY(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sp-draw {
+  from {
+    stroke-dashoffset: var(--len, 300);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sp-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sp-stamp {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.45) rotate(-6deg);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes sp-stamp-down {
+  0% {
+    opacity: 0;
+    transform: scale(1.3) rotate(var(--r, 0deg));
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(var(--r, 0deg));
+  }
+}
+@keyframes sp-shake {
+  0%,
+  100% {
+    transform: none;
+  }
+  12.5%,
+  62.5% {
+    transform: translateX(-6px);
+  }
+  37.5%,
+  87.5% {
+    transform: translateX(6px);
+  }
+}
+@keyframes sp-scan {
+  from {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(var(--scan-h, 260px));
+    opacity: 0;
+  }
+}
+@keyframes sp-scan-y {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+@keyframes sp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes sp-wipe-out {
+  0%,
+  16% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(102%);
+  }
+}
+@keyframes sp-wipe-out-rtl {
+  0%,
+  16% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-102%);
+  }
+}
+@keyframes sp-toast-in {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(1.06) rotate(-2deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(0.98) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sp-sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes sp-sheet-down {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+@keyframes sp-drawer-in {
+  from {
+    transform: translateX(var(--drawer-from, 100%));
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes sp-drawer-out {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(var(--drawer-from, 100%));
+  }
+}
+@keyframes sp-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sp-overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes sp-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sp-link-stamp {
+  0% {
+    opacity: 0;
+    transform: translateY(-18px) scale(1.08) rotate(-2deg);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sp-lid-snap {
+  0% {
+    transform: translateY(-9px) rotate(180deg);
+  }
+  55% {
+    transform: translateY(1px) rotate(358deg);
+  }
+  75% {
+    transform: translateY(-1px) rotate(362deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+/* Hero stamp sequence (§4.3-1). Pure CSS so it runs before hydration.
+   html[data-hero-played] (set from sessionStorage before paint) skips it. */
+.hero-letter {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  /* backwards, not both: once stamped, the letter's own transform is free for the hover press */
+  animation: sp-stamp-in 360ms var(--ease-stamp) backwards;
+  animation-delay: calc(var(--i) * 45ms + 80ms);
+}
+/* Logo badge (§8.9): the plaque stamps first, the letters drop in, then the stars pop */
+.hero-plaque {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: sp-stamp-in 380ms var(--ease-stamp) backwards;
+}
+.hero-star {
+  transform-box: fill-box;
+  transform-origin: 50% 55%;
+  animation: sp-star-pop 520ms var(--ease-stamp) backwards;
+  animation-delay: calc(var(--si) * 110ms + 560ms);
+}
+@keyframes sp-star-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(-120deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.15) rotate(8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-h1 {
+  animation: sp-settle 520ms var(--ease-out-quint) both;
+}
+.hero-crinkle {
+  transform-origin: 50% 100%;
+  animation: sp-jump-sit 1000ms linear both;
+  animation-delay: 1000ms;
+}
+/* Sitting on the plaque edge: legs dangle over it */
+.hero-crinkle .crinkle-legs {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: sp-dangle 2.6s ease-in-out 1.6s infinite;
+}
+@keyframes sp-jump-sit {
+  /* crouch beside the badge, leap up in an arc onto the plaque edge, land with a squash, settle */
+  0% {
+    opacity: 0;
+    transform: translate(130%, 150%) scaleY(1);
+    animation-timing-function: ease-out;
+  }
+  12% {
+    opacity: 1;
+    transform: translate(130%, 150%) scale(1.08, 0.82);
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+  }
+  48% {
+    transform: translate(60%, -70%) rotate(12deg) scaleY(1.06);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.9, 0.5);
+  }
+  74% {
+    transform: translate(0, 0) scale(1.12, 0.8);
+    animation-timing-function: ease-out;
+  }
+  88% {
+    transform: scale(0.96, 1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sp-dangle {
+  0%,
+  100% {
+    rotate: 0deg;
+  }
+  30% {
+    rotate: 7deg;
+  }
+  65% {
+    rotate: -5deg;
+  }
+}
+.hero-arrow path {
+  animation: sp-draw 400ms var(--ease-out-quint) both;
+  animation-delay: 1500ms;
+}
+.hero-note {
+  animation: sp-fade-in 200ms linear both;
+  animation-delay: 1400ms;
+}
+html[data-hero-played]
+  :is(
+    .hero-letter,
+    .hero-plaque,
+    .hero-star,
+    .hero-h1,
+    .hero-crinkle,
+    .hero-arrow path,
+    .hero-note,
+    .hero-fan-deal
+  ) {
+  animation: none;
+}
+
+/* Hero interactions (after the entrance) */
+@keyframes sp-deal {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) rotate(-14deg) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes sp-hop {
+  0%,
+  100% {
+    transform: none;
+  }
+  30% {
+    transform: translateY(-22%) scaleY(1.06);
+  }
+  62% {
+    transform: translateY(0) scaleY(0.86);
+  }
+  80% {
+    transform: scaleY(1.04);
+  }
+}
+@keyframes sp-steam {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  40% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-35%);
+  }
+}
+.hero-fan-deal {
+  animation: sp-deal 620ms var(--ease-out-quint) backwards;
+  animation-delay: calc(var(--i) * 110ms + 900ms);
+}
+.hero-fan {
+  --px: 0;
+  --py: 0;
+}
+.hero-fan-card {
+  transform: translate3d(calc(var(--px) * var(--d) * 1px), calc(var(--py) * var(--d) * 1px), 0)
+    rotate(var(--rot));
+  transition: transform 600ms var(--ease-out-quint);
+}
+.hero-fan-card:is(:hover, :focus-visible) {
+  z-index: 5;
+  transform: translate3d(calc(var(--px) * var(--d) * 1px), calc(var(--py) * var(--d) * 1px - 10px), 0)
+    rotate(0deg) scale(1.07);
+  transition-duration: 260ms;
+}
+.hero-steam path {
+  animation: sp-steam 2.4s ease-in-out infinite;
+}
+.hero-steam path:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.hero-steam path:nth-child(3) {
+  animation-delay: 1s;
+}
+/* Touch twins of the hover interactions (§8.6) */
+.wm-press .hero-letter[data-pressed] {
+  animation: sp-press 420ms var(--ease-press);
+}
+.wm-press .hero-star[data-pressed] {
+  animation: sp-twinkle 650ms var(--ease-stamp);
+}
+@keyframes sp-twinkle {
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.crinkle-hop[data-hop] > svg {
+  transform-origin: 50% 100%;
+  animation: sp-hop 560ms var(--ease-press);
+}
+@keyframes sp-press {
+  40% {
+    transform: translateY(4%) scaleY(0.84) scaleX(1.04);
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+   SHELL
+   ─────────────────────────────────────────────────────────────── */
+.header-chrome {
+  pointer-events: none;
+  transition: transform var(--dur-ui) var(--ease-press);
+}
+.header-chrome .header-bar {
+  pointer-events: auto;
+}
+.header-chrome.is-hidden {
+  transform: translateY(-100%);
+}
+.header-bar,
+.header-bar > * {
+  transition: transform var(--dur-ui) var(--ease-press);
+}
+@media (min-width: 1024px) {
+  .header-chrome.is-shrunk .header-bar {
+    transform: translateY(-12px);
+  }
+  .header-chrome.is-shrunk .header-bar > * {
+    transform: translateY(6px);
+  }
+  .header-chrome.is-shrunk .header-logo svg {
+    transform: scale(0.9);
+    transform-origin: 0 50%;
+    transition: transform var(--dur-ui) var(--ease-press);
+  }
+}
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  inset-inline: 12px;
+  bottom: 6px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--color-yellow);
+  box-shadow: 0 0 0 1px var(--color-blue);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform var(--dur-ui) var(--ease-stamp);
+}
+.nav-link:hover::after,
+.nav-link.is-active::after,
+.nav-link[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+/* Sticky filter bar follows the header as it hides (transform only) */
+.filter-sticky {
+  transition: transform var(--dur-ui) var(--ease-press);
+}
+html:has(.header-chrome.is-hidden) .filter-sticky {
+  transform: translateY(calc(-1 * var(--header-h)));
+}
+/* Pages with a fixed mobile bottom bar reserve room for it */
+@media (max-width: 767.98px) {
+  body:has(.mobile-bottom-bar) {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Quote drawer: bottom sheet on mobile, side panel ≥ md (mirrored in RTL) */
+.quote-overlay[data-state='open'],
+.search-overlay[data-state='open'] {
+  animation: sp-overlay-in var(--dur-ui) linear both;
+}
+.quote-overlay[data-state='closed'],
+.search-overlay[data-state='closed'] {
+  animation: sp-overlay-out 160ms linear both;
+}
+.quote-drawer[data-state='open'] {
+  animation: sp-sheet-up var(--dur-ui) var(--ease-out-quint) both;
+}
+.quote-drawer[data-state='closed'] {
+  animation: sp-sheet-down 180ms var(--ease-press) both;
+}
+@media (min-width: 768px) {
+  .quote-drawer {
+    --drawer-from: 100%;
+  }
+  [dir='rtl'] .quote-drawer {
+    --drawer-from: -100%;
+  }
+  .quote-drawer[data-state='open'] {
+    animation: sp-drawer-in var(--dur-ui) var(--ease-out-quint) both;
+  }
+  .quote-drawer[data-state='closed'] {
+    animation: sp-drawer-out 180ms var(--ease-press) both;
+  }
+}
+.search-panel[data-state='open'] {
+  animation: sp-stamp-down 240ms var(--ease-stamp) both;
+}
+.search-group [cmdk-group-heading] {
+  padding: 8px 8px 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgb(14 42 140 / 0.7);
+}
+
+/* Hero spiral O turns 0→90° as the hero scrolls out (scroll-linked, transform only) */
+.spiral-scroll {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes sp-spiral-turn {
+  to {
+    transform: rotate(90deg);
+  }
+}
+@supports (animation-timeline: scroll()) {
+  .spiral-scroll {
+    animation: sp-spiral-turn linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 90vh;
+  }
+}
+
+/* Hand-note arrows draw in as they enter the viewport */
+.draw-on-view path {
+  stroke-dashoffset: 0;
+}
+@supports (animation-timeline: view()) {
+  .draw-on-view path {
+    animation: sp-draw linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 90%;
+  }
+}
+
+/* Sticker wall: lift while dragged, land with a springy settle back to its tilt */
+.sticker-drag {
+  rotate: var(--rot);
+  transition:
+    rotate 420ms var(--ease-stamp),
+    scale 420ms var(--ease-stamp);
+}
+.sticker-drag[data-dragging] {
+  z-index: 20;
+  cursor: grabbing;
+  scale: 1.06;
+  rotate: calc(var(--rot) + 4deg);
+  transition:
+    rotate 160ms var(--ease-press),
+    scale 160ms var(--ease-press);
+}
+
+.shake {
+  animation: sp-shake 240ms linear;
+}
+.badge-stamp {
+  animation: sp-stamp 380ms var(--ease-stamp);
+}
+
+/* Reduced motion (§4.5): everything renders at rest. */
+/* ── Page illustrations in motion (§8.8). All transforms in SVG user units. ── */
+:is(.pf-spin, .pl-spin, .pf-squash, .pl-squash, .pf-hop, .al-ring, .ps-tag, .pl-smoke) {
+  transform-box: view-box;
+}
+.pf-spin,
+.pl-spin {
+  animation: sp-spin 7s linear infinite;
+}
+.pf-rev,
+.pl-rev {
+  animation-direction: reverse;
+}
+.pf-belt,
+.pl-belt {
+  animation: pf-belt 0.9s linear infinite;
+}
+@keyframes pf-belt {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+.pf-drift,
+.pf-stream {
+  animation: pf-drift 1.3s linear infinite;
+}
+.pf-stream {
+  animation-direction: reverse;
+}
+@keyframes pf-drift {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  30%,
+  70% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+}
+.pf-flicker {
+  animation: pf-flicker 1.6s steps(1) infinite;
+}
+@keyframes pf-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+/* Press stroke: fall fast, hit, rise slowly */
+.pl-ram {
+  animation: pl-ram 1.6s infinite;
+}
+@keyframes pl-ram {
+  0% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  40%,
+  50% {
+    transform: translateY(68px);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.3, 1);
+  }
+  100% {
+    transform: none;
+  }
+}
+.pf-squash,
+.pl-squash {
+  animation: pf-squash 1.6s infinite;
+}
+@keyframes pf-squash {
+  0%,
+  38%,
+  62%,
+  100% {
+    transform: none;
+  }
+  44% {
+    transform: scale(1.05, 0.88);
+  }
+}
+.pf-impact,
+.pl-impact {
+  animation: pf-impact 1.6s infinite;
+}
+@keyframes pf-impact {
+  0%,
+  38%,
+  60%,
+  100% {
+    opacity: 0;
+  }
+  42%,
+  52% {
+    opacity: 1;
+  }
+}
+.pl-steam {
+  animation: pl-steam 1.6s ease-out infinite;
+}
+@keyframes pl-steam {
+  0%,
+  45% {
+    opacity: 0;
+    transform: none;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+/* A container leaves the press on every stroke and rides the belt off */
+.pl-ride {
+  animation: pl-ride 4.8s linear infinite;
+}
+@keyframes pl-ride {
+  0%,
+  8% {
+    opacity: 0;
+    transform: none;
+  }
+  14% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(150px);
+  }
+}
+.pl-smoke {
+  animation: pl-smoke 3.2s ease-out infinite;
+}
+@keyframes pl-smoke {
+  from {
+    opacity: 0;
+    transform: none;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate(10px, -46px) scale(1.8);
+  }
+}
+.pf-hop {
+  animation: pf-hop 1.4s ease-in-out infinite;
+}
+@keyframes pf-hop {
+  0%,
+  60%,
+  100% {
+    transform: none;
+  }
+  25% {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+  45% {
+    transform: scale(1.02, 0.97);
+  }
+}
+/* About process frames (process.tsx). Press: sheet in, strike, container out (2.4 s). */
+.pf-ram {
+  animation: pf-ram 2.4s infinite;
+}
+@keyframes pf-ram {
+  0% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  35%,
+  45% {
+    transform: translateY(52px);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.3, 1);
+  }
+  85%,
+  100% {
+    transform: none;
+  }
+}
+.pf-sheet {
+  opacity: 0;
+  animation: pf-sheet 2.4s infinite;
+}
+@keyframes pf-sheet {
+  0%,
+  35% {
+    opacity: 1;
+  }
+  37%,
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.pf-formed {
+  animation: pf-formed 2.4s infinite;
+}
+@keyframes pf-formed {
+  0%,
+  35% {
+    opacity: 0;
+    transform: none;
+  }
+  37%,
+  80% {
+    opacity: 1;
+    transform: none;
+  }
+  94%,
+  100% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+.pf-spark {
+  opacity: 0;
+  animation: pf-spark 2.4s infinite;
+}
+@keyframes pf-spark {
+  0%,
+  34% {
+    opacity: 0;
+  }
+  37%,
+  46% {
+    opacity: 1;
+  }
+  52%,
+  100% {
+    opacity: 0;
+  }
+}
+/* Trim: the roller runs the rim left to right; each tooth of excess curls off as it passes */
+.pf-roll {
+  animation: pf-roll 2.4s infinite;
+}
+@keyframes pf-roll {
+  0% {
+    opacity: 1;
+    transform: none;
+    animation-timing-function: linear;
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(156px);
+  }
+  64% {
+    opacity: 0;
+    transform: translateX(156px);
+  }
+  66%,
+  96% {
+    opacity: 0;
+    transform: none;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.pf-tooth {
+  opacity: 0;
+  transform-box: view-box;
+  animation: pf-tooth 2.4s infinite backwards;
+}
+@keyframes pf-tooth {
+  0%,
+  2% {
+    opacity: 1;
+    transform: none;
+  }
+  12% {
+    opacity: 0;
+    transform: translate(6px, -18px) rotate(120deg);
+  }
+  80% {
+    opacity: 0;
+    transform: none;
+  }
+  92%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* Count: containers drop onto the stack one by one, tally in step, tick last (4 s) */
+.pf-st {
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.pf-st-0 {
+  animation-name: pf-st-0;
+}
+.pf-st-1 {
+  animation-name: pf-st-1;
+}
+.pf-st-2 {
+  animation-name: pf-st-2;
+}
+.pf-st-3 {
+  animation-name: pf-st-3;
+}
+.pf-st-4 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-name: pf-st-4;
+}
+@keyframes pf-st-0 {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  6%,
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pf-st-1 {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  24%,
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pf-st-2 {
+  0%,
+  36% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  42%,
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pf-st-3 {
+  0%,
+  54% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  60%,
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes pf-st-4 {
+  0%,
+  70% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  76%,
+  88% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+/* Sustainability afterlife loop */
+.al-ring {
+  animation: sp-spin 40s linear infinite;
+}
+.al-steam {
+  animation: pl-steam 2.2s ease-out infinite;
+}
+.al-drip {
+  animation: al-drip 1.4s ease-in infinite;
+}
+@keyframes al-drip {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+}
+.al-drop {
+  animation: al-drop 2.4s cubic-bezier(0.55, 0, 1, 0.45) infinite;
+}
+@keyframes al-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  15% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(26px);
+  }
+  61%,
+  100% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+}
+.al-flame {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: al-flame 0.7s ease-in-out infinite alternate;
+}
+@keyframes al-flame {
+  to {
+    transform: scale(0.9, 1.15);
+  }
+}
+.al-twinkle {
+  animation: pf-flicker 1.2s steps(1) infinite;
+}
+/* Wholesale pallet */
+.ps-drop {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: sp-drop 620ms var(--ease-press) 350ms both;
+}
+.ps-bob {
+  animation: rc-bob 3s ease-in-out 1.2s infinite;
+}
+.ps-tag {
+  animation: ps-swing 2.6s ease-in-out infinite;
+}
+@keyframes ps-swing {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+.ps-speed {
+  animation: pf-drift 1.3s linear infinite reverse;
+}
+/* Wholesale form: Aloom strolls in from the left */
+.slide-mascot[data-state='armed'] {
+  opacity: 0;
+  transform: translateX(-110vw);
+}
+.slide-mascot[data-state='in'] {
+  animation: slide-in-left 1300ms cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.slide-mascot[data-state='in'] .slide-mascot-bob {
+  animation: slide-bob 260ms ease-in-out 4 alternate;
+}
+@keyframes slide-in-left {
+  from {
+    opacity: 1;
+    transform: translateX(-110vw);
+  }
+  82% {
+    transform: translateX(4%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes slide-bob {
+  to {
+    transform: translateY(-10%) rotate(4deg);
+  }
+}
+html[dir='rtl'] .slide-mascot[data-state='armed'] {
+  transform: translateX(110vw);
+}
+html[dir='rtl'] .slide-mascot[data-state='in'] {
+  animation-name: slide-in-right;
+}
+@keyframes slide-in-right {
+  from {
+    opacity: 1;
+    transform: translateX(110vw);
+  }
+  82% {
+    transform: translateX(-4%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Home recycling loop (RecycleCycle.tsx, §8.5). Static unless JS arms it. */
+.recycle-cycle .rc-traveler {
+  display: none;
+}
+/* Shown only once it's moving, so it never sits at the SVG origin */
+.recycle-cycle[data-loop] .rc-traveler {
+  display: inline;
+}
+.recycle-cycle .rc-stop,
+.recycle-cycle .rc-head {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.recycle-cycle[data-state='armed'] :is(.rc-disc, .rc-stop, .rc-head, .rc-note) {
+  opacity: 0;
+}
+.recycle-cycle[data-state='armed'] .rc-arc path:first-child {
+  stroke-dashoffset: 100;
+}
+.recycle-cycle[data-state='play'] .rc-disc {
+  animation: rv-zoom 700ms var(--ease-out-quint) both;
+}
+.recycle-cycle[data-state='play'] .rc-ball {
+  animation: rv-stamp 520ms var(--ease-stamp) 150ms both;
+}
+.recycle-cycle[data-state='play'] .rc-note {
+  transform-origin: 0% 100%;
+  animation: rc-note-grow 560ms var(--ease-stamp) 520ms both;
+}
+.recycle-cycle[data-state='play'] .rc-note-arrow path {
+  animation: sp-draw 420ms var(--ease-out-quint) 700ms both;
+}
+.recycle-cycle[data-state='play'] .rc-arc path:first-child {
+  animation: sp-draw 440ms cubic-bezier(0.45, 0, 0.55, 1) both;
+  animation-delay: calc(900ms + var(--i) * 420ms);
+}
+.recycle-cycle[data-state='play'] .rc-head {
+  animation: sp-fade-in 120ms linear both;
+  animation-delay: calc(1300ms + var(--i) * 420ms);
+}
+.recycle-cycle[data-state='play'] .rc-stop:not(.rc-ball) {
+  animation: rv-stamp 460ms var(--ease-stamp) both;
+  animation-delay: calc(900ms + var(--i) * 420ms);
+}
+.recycle-cycle[data-state='play'] .rc-bob {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rc-bob 3.2s ease-in-out 2.6s infinite;
+}
+.recycle-cycle[data-state='play'] .rc-track {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sp-spin 60s linear infinite;
+}
+@keyframes rc-note-grow {
+  from {
+    opacity: 0;
+    transform: translate(-30%, 50%) scale(0.2) rotate(-12deg);
+  }
+}
+@keyframes rc-bob {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-5px) rotate(-6deg);
+  }
+}
+
+/* Bulk CTA → footer mascot hand-off (MascotHandoff.tsx, §8.4) */
+.mascot-jumpout[data-state='out'] {
+  transform-origin: 50% 100%;
+  animation: sp-jump-out 1100ms linear forwards;
+}
+@keyframes sp-jump-out {
+  0% {
+    transform: none;
+    animation-timing-function: ease-out;
+  }
+  12% {
+    transform: scale(1.08, 0.86);
+    animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
+  }
+  36% {
+    transform: translateY(-34%) rotate(-6deg) scaleY(1.05);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  100% {
+    transform: translateY(110vh) rotate(22deg);
+  }
+}
+/* Scrolling back up (§8.7): he springs up from below into his spot… */
+.mascot-jumpout[data-state='back'] {
+  transform-origin: 50% 100%;
+  animation: sp-jump-back 900ms linear both;
+}
+@keyframes sp-jump-back {
+  0% {
+    opacity: 1;
+    transform: translateY(110vh) rotate(18deg);
+    animation-timing-function: cubic-bezier(0.15, 0.6, 0.35, 1);
+  }
+  58% {
+    transform: translateY(-26%) rotate(-5deg) scaleY(1.05);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  80% {
+    transform: scale(1.1, 0.84);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: none;
+  }
+}
+/* …after jumping up and out of the footer O */
+.footer-peek[data-state='leave'] .peek-riser {
+  transform: translateY(105%);
+  transition: transform 160ms ease-in;
+}
+.footer-peek[data-state='leave'] .peek-faller {
+  animation: sp-jump-up-out 820ms cubic-bezier(0.2, 0.7, 0.35, 1) 80ms both;
+}
+@keyframes sp-jump-up-out {
+  0% {
+    opacity: 1;
+    transform: translateY(115%) rotate(6deg);
+  }
+  45% {
+    transform: translateY(-40%) rotate(-4deg) scaleY(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-300%) rotate(-12deg);
+  }
+}
+.footer-peek .peek-faller {
+  display: none;
+}
+.footer-peek[data-state] .peek-faller {
+  display: block;
+  opacity: 0;
+}
+.footer-peek[data-state='armed'] .peek-riser {
+  transform: translateY(105%);
+}
+.footer-peek[data-state='play'] .peek-faller {
+  animation: sp-fall-in 950ms cubic-bezier(0.38, 0, 0.75, 0.55) both;
+}
+.footer-peek[data-state='play'] .peek-riser {
+  animation: sp-peek-rise 560ms var(--ease-stamp) 1150ms both;
+}
+@keyframes sp-fall-in {
+  0% {
+    opacity: 1;
+    transform: translateY(-262%) rotate(-14deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(115%) rotate(10deg);
+  }
+}
+@keyframes sp-peek-rise {
+  0% {
+    transform: translateY(105%);
+  }
+  55% {
+    transform: translateY(105%);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+/* Scroll-in transitions (RevealOnScroll.tsx, §8.3). Only `from` keyframes, so each element
+   animates to its own resting translate/rotate/scale; fill "backwards" hands those back after.
+   Independent translate/scale/rotate properties never fight component transforms. */
+html[data-rv] [data-reveal]:not([data-reveal-done]) {
+  opacity: 0;
+}
+html[data-rv] [data-reveal-in] {
+  --rv-d: 28px;
+  animation: rv-up 760ms var(--ease-out-quint) backwards;
+  animation-delay: calc(var(--ri, 0) * 80ms);
+}
+html[data-rv] [data-reveal='wipe'][data-reveal-in] {
+  animation-name: rv-wipe;
+  animation-duration: 820ms;
+}
+html[data-rv] [data-reveal='deal'][data-reveal-in] {
+  animation-name: rv-deal;
+  animation-duration: 820ms;
+  animation-timing-function: var(--ease-stamp);
+}
+html[data-rv] [data-reveal='stamp'][data-reveal-in] {
+  animation-name: rv-stamp;
+  animation-duration: 520ms;
+  animation-timing-function: var(--ease-stamp);
+}
+html[data-rv] [data-reveal='zoom'][data-reveal-in] {
+  animation-name: rv-zoom;
+}
+html[data-rv] [data-reveal='start'][data-reveal-in] {
+  animation-name: rv-start;
+}
+html[data-rv][dir='rtl'] [data-reveal='start'][data-reveal-in] {
+  animation-name: rv-start-rtl;
+}
+@keyframes rv-up {
+  from {
+    opacity: 0;
+    translate: 0 var(--rv-d);
+  }
+}
+@keyframes rv-wipe {
+  from {
+    opacity: 0;
+    translate: 0 0.45em;
+    clip-path: inset(-10% -4% 100% -4%);
+  }
+  to {
+    clip-path: inset(-10% -4% -25% -4%);
+  }
+}
+@keyframes rv-deal {
+  from {
+    opacity: 0;
+    translate: 0 calc(var(--rv-d) * 2.2);
+    rotate: -7deg;
+  }
+}
+@keyframes rv-stamp {
+  from {
+    opacity: 0;
+    scale: 1.25;
+  }
+  60% {
+    opacity: 1;
+    scale: 0.96;
+  }
+}
+@keyframes rv-zoom {
+  from {
+    opacity: 0;
+    scale: 0.9;
+  }
+}
+@keyframes rv-start {
+  from {
+    opacity: 0;
+    translate: calc(var(--rv-d) * -2) 0;
+  }
+}
+@keyframes rv-start-rtl {
+  from {
+    opacity: 0;
+    translate: calc(var(--rv-d) * 2) 0;
+  }
+}
+@media print {
+  html[data-rv] [data-reveal] {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
